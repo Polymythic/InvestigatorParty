@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Investigator Party</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_clue">Clue</string>
+    <string name="title_activity_notes">Notes</string>
+    <string name="clueCodeLabel">Clue Code</string>
+    <string name="clueDescriptionLabel">Clue Description</string>
+    <string name="clueInspectLabel">Inspect</string>
+    <string name="clueInteractLabel">Interact</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="journalLabel">Investigation Journal</string>
+    <string name="title_activity_inventory">InventoryActivity</string>
+    <string name="nameLabel">Name</string>
+    <string name="occupationLabel">Occupation</string>
+    <string name="birthplaceLabel">Birthplace</string>
+    <string name="magicPointsLabel">Magic Points</string>
+    <string name="hitPointsLabel">Hit Points</string>
+    <string name="sanityLabel">Sanity</string>
+    <string name="ageLabel">Age</string>
+    <string name="title_activity_fate">FateActivity</string>
+    <string name="preferenceSelectedInvestigator">selectedInvestigator</string>
+    <string name="preferenceDisplayedEventId">displayedEventId</string>
+
+</resources>

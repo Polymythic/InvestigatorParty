@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_investigator"
+        android:icon="@mipmap/ic_launcher_round"
+        android:title="Persona" />
+
+    <item
+        android:id="@+id/navigation_clues"
+        android:icon="@android:drawable/ic_search_category_default"
+        android:title="Clues" />
+    <item
+        android:id="@+id/navigation_journal"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Journal" />
+    <item
+        android:id="@+id/navigation_inventory"
+        android:icon="?android:attr/actionModePasteDrawable"
+        android:title="Inventory" />
+
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Settings" />
+
+</menu>
