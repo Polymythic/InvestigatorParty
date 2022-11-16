@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Steve/Desktop/investigator.db" foreign_keys="1"/><window><current_tab id="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3942"/><expanded_item id="0" parent="1"/><expanded_item id="3" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="RawCharacterStatModel"/><default_encoding codec=""/><browsetable_info data="AAAACQAAACoAUgBhAHcAQwBoAGEAcgBhAGMAdABlAHIAUwB0AGEAdABNAG8AZABlAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////AAAALABSAGEAdwBDAGgAYQByAGEAYwB0AGUAcgBTAGsAaQBsAGwATQBvAGQAZQBsAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAA/////wAAACoASQBuAHYAZQBuAHQAbwByAHkAVAByAGEAYwBrAGUAcgBNAG8AZABlAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////AAAAGgBHAGEAbQBlAEkAdABlAG0ATQBvAGQAZQBsAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAA/////wAAADAARwBhAG0AZQBFAHYAZQBuAHQAVAByAGEAbgBzAGkAdABpAG8AbgBNAG8AZABlAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////AAAAKgBHAGEAbQBlAEUAdgBlAG4AdABUAHIAYQBjAGsAZQByAE0AbwBkAGUAbAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8AAAAcAEcAYQBtAGUARQB2AGUAbgB0AE0AbwBkAGUAbAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8AAAAmAEMAaABhAHIAYQBjAHQAZQByAFMAawBpAGwAbABNAG8AZABlAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////AAAAHABDAGgAYQByAGEAYwB0AGUAcgBNAG8AZABlAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////"/></tab_browse><tab_sql><sql name="SQL 1">SELECT * FROM GameEventModel;INSERT INTO GameEventModel(gameEventId, isEventTracked, eventName, eventDescription, itemGrantedForEvent, sanityLossForEvent, healthLossForEvent, gameEventIdToPreventSanityLoss, itemToPreventSanityLoss, gameEventIdToPreventHealthLoss, itemToPreventHealthLoss) VALUES
+/* Study Room */
+(100, 0, 'Study', 'There is a bookshelf in the corner, a desk under a lamp, and a door to the south.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(101, 0, 'Study Book Shelf', 'The shelf is old and dusty, but it appears there may be books of value.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(102, 1, 'Chemistry Book Found', 'After browsing the titles, a well bookmarked Chemistry Book catches your eye.', 3, NULL, NULL, NULL, NULL, NULL, NULL),
+(103, 0, 'Study Door Locked', 'The door appears to be locked.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(104, 1, 'Key Opens Study Door!', 'You use the key successfully.  Turn the code card over.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(105, 0, 'Study Unlocked Door', 'The door handle turns freely.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(106, 0, 'Study Desk', 'There are rifled stacks of papers and some old newspapers.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(107, 1, 'Study Desk Drawer', 'Opening the desk drawer you find a small silver key.', 4, NULL, NULL, NULL, NULL, NULL, NULL),
+
+
+/* Laboratory */
+(201, 0, 'Laboratory', 'There is a shelf with tools to the west, a door to the north, and a table to the south.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(202, 0, 'Laboratory Bench', 'There is a pile of chemicals on the bench.  Some are shattered.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(203, 0, 'Laboratory Bench Examined', 'After peering at the various bottles, you see chemicals that appear to be mixable in an apparatus.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(204, 1, 'Chemical Explosion', 'After peering at the various bottles, you see chemicals that appear to be mixable in an apparatus.', NULL, NULL, 5, NULL, NULL, NULL, NULL),
+(205, 1, 'Chemical Synthesis', 'You mix the necessary reagents and a misty compound is formed.', 5, NULL, NULL, NULL, NULL, NULL, NULL)
+;
+
+/* Game Transitiom Rule - EXAMINE and INTERACT have id's 1 and 2 respectively.  They are hard-coded for now. */
+INSERT INTO GameEventTransitionModel(eventSourceId, itemIdRequiredToEnable, skillRequired, skillDifficultyModifier, skillCheckDuration, eventIdIfSkillCheckPass, eventIdIfSkillCheckFail) VALUES 
+(101, NULL, 24, 0, 60, 102, 101),
+(103, 4, 2, 0, 0, 105, 103),
+(202, NULL, 1, 0, 10, 203, 202),
+(202, NULL, 10, 25, 120, 205, 204),
+(203, NULL, 1, 0, 10, 203, 202),
+(203, NULL, 10, 25, 120, 205, 204)
+;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
